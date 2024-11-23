@@ -8,24 +8,42 @@
 </head>
 <body>
     <header>
-        <h1>Science: Dive into the Deep Waters of Physics, Chemistry, and Biology</h1>
-        <p>Choose a topic below to start your science exploration:</p>
-        <a href="index.html">Back to Home</a>
+        <div class="container">
+            <h1>Science: Dive into Physics, Chemistry, and Biology</h1>
+            <p>Learn the fundamental concepts of the physical world, chemistry, and biology.</p>
+        </div>
     </header>
 
-    <section id="science-lesson">
-        <h2>Lesson 1: Physics - Laws of Motion</h2>
-        <p>Physics is the study of the physical world around us. Let's begin with the fundamental laws of motion.</p>
+    <section class="lesson">
+        <div class="container">
+            <h2>Physics: Laws of Motion</h2>
+            <p>Learn Newton's Three Laws of Motion. They are the foundation of classical mechanics!</p>
 
-        <button onclick="showPhysics()">Start Physics Lesson</button>
-        <div id="physicsContent" style="display:none;">
-            <p>Learn about Newton's Three Laws of Motion...</p>
+            <h3>Quiz: What is the first law of motion?</h3>
+            <input type="text" id="physicsAnswer" placeholder="Your Answer">
+            <button onclick="checkPhysicsAnswer()">Submit Answer</button>
+            <p id="physicsResult"></p>
         </div>
     </section>
 
+    <footer>
+        <div class="container">
+            <a href="index.html">Back to Home</a>
+        </div>
+    </footer>
+
     <script>
-        function showPhysics() {
-            document.getElementById('physicsContent').style.display = 'block';
+        function checkPhysicsAnswer() {
+            const answer = document.getElementById('physicsAnswer').value.toLowerCase();
+            const result = document.getElementById('physicsResult');
+            
+            if (answer.includes("inertia")) {
+                result.textContent = 'Correct! The first law is the Law of Inertia.';
+                result.style.color = 'green';
+            } else {
+                result.textContent = 'Incorrect. The first law is the Law of Inertia.';
+                result.style.color = 'red';
+            }
         }
     </script>
 </body>

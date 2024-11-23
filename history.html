@@ -8,39 +8,42 @@
 </head>
 <body>
     <header>
-        <h1>History: Learn About the Events and People That Shaped Your World</h1>
-        <p>Click on a historical event or figure to learn more:</p>
-        <a href="index.html">Back to Home</a>
+        <div class="container">
+            <h1>History: Learn About the Events and People Who Shaped Our World</h1>
+            <p>Explore historical events, famous figures, and their impact on the world!</p>
+        </div>
     </header>
 
-    <section id="history-lesson">
-        <h2>Learn about Key Historical Events:</h2>
-        <button onclick="showHistory('event1')">World War II</button>
-        <button onclick="showHistory('event2')">The Moon Landing</button>
-        <button onclick="showHistory('person1')">Albert Einstein</button>
+    <section class="lesson">
+        <div class="container">
+            <h2>The Moon Landing: A Giant Leap for Mankind</h2>
+            <p>On July 20, 1969, Neil Armstrong and Buzz Aldrin became the first humans to walk on the Moon.</p>
 
-        <div id="historyContent">
-            <div id="event1" style="display:none;">
-                <h3>World War II</h3>
-                <p>World War II was a global conflict that lasted from 1939 to 1945...</p>
-            </div>
-            <div id="event2" style="display:none;">
-                <h3>The Moon Landing</h3>
-                <p>On July 20, 1969, NASA’s Apollo 11 mission successfully landed humans on the Moon...</p>
-            </div>
-            <div id="person1" style="display:none;">
-                <h3>Albert Einstein</h3>
-                <p>Albert Einstein was a theoretical physicist who developed the theory of relativity...</p>
-            </div>
+            <h3>Quiz: Who was the first person to walk on the Moon?</h3>
+            <input type="text" id="historyAnswer" placeholder="Your Answer">
+            <button onclick="checkHistoryAnswer()">Submit Answer</button>
+            <p id="historyResult"></p>
         </div>
     </section>
 
-    <script>
-        function showHistory(id) {
-            const sections = document.querySelectorAll('#historyContent > div');
-            sections.forEach(section => section.style.display = 'none');
+    <footer>
+        <div class="container">
+            <a href="index.html">Back to Home</a>
+        </div>
+    </footer>
 
-            document.getElementById(id).style.display = 'block';
+    <script>
+        function checkHistoryAnswer() {
+            const answer = document.getElementById('historyAnswer').value.toLowerCase();
+            const result = document.getElementById('historyResult');
+            
+            if (answer.includes("neil armstrong")) {
+                result.textContent = 'Correct! Neil Armstrong was the first person on the Moon.';
+                result.style.color = 'green';
+            } else {
+                result.textContent = 'Incorrect. The correct answer is Neil Armstrong.';
+                result.style.color = 'red';
+            }
         }
     </script>
 </body>

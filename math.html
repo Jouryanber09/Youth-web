@@ -8,35 +8,41 @@
 </head>
 <body>
     <header>
-        <h1>Mathematics: Explore the Planet of Numbers and Equations</h1>
-        <p>Welcome to the Mathematics section! Here you can explore a variety of lessons and quizzes.</p>
-        <a href="index.html">Back to Home</a>
+        <div class="container">
+            <h1>Mathematics: Explore the Planet of Numbers and Equations</h1>
+            <p>Start learning about basic math concepts, arithmetic, algebra, and more!</p>
+        </div>
     </header>
 
-    <section id="math-lesson">
-        <h2>Lesson 1: Basic Arithmetic</h2>
-        <p>Let's start with basic operations like addition, subtraction, multiplication, and division.</p>
+    <section class="lesson">
+        <div class="container">
+            <h2>Lesson 1: Basic Arithmetic</h2>
+            <p>Let's start with basic addition and subtraction. Understand how numbers interact!</p>
 
-        <button onclick="startMathQuiz()">Start Math Quiz</button>
-        <div id="mathQuiz" style="display:none;">
-            <p>What is 5 + 3?</p>
-            <input type="number" id="mathAnswer">
-            <button onclick="checkMathAnswer()">Submit</button>
+            <h3>Quiz: What is 8 + 5?</h3>
+            <input type="number" id="mathAnswer" placeholder="Your Answer">
+            <button onclick="checkMathAnswer()">Submit Answer</button>
             <p id="mathResult"></p>
         </div>
     </section>
 
-    <script>
-        function startMathQuiz() {
-            document.getElementById('mathQuiz').style.display = 'block';
-        }
+    <footer>
+        <div class="container">
+            <a href="index.html">Back to Home</a>
+        </div>
+    </footer>
 
+    <script>
         function checkMathAnswer() {
             const answer = document.getElementById('mathAnswer').value;
-            if (answer == 8) {
-                document.getElementById('mathResult').textContent = 'Correct! 5 + 3 = 8';
+            const result = document.getElementById('mathResult');
+            
+            if (parseInt(answer) === 13) {
+                result.textContent = 'Correct! 8 + 5 = 13';
+                result.style.color = 'green';
             } else {
-                document.getElementById('mathResult').textContent = 'Oops, try again!';
+                result.textContent = 'Oops! Try again.';
+                result.style.color = 'red';
             }
         }
     </script>
