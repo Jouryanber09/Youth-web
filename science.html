@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Science Lessons</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Science: Dive into the Deep Waters of Physics, Chemistry, and Biology</h1>
+        <p>Choose a topic below to start your science exploration:</p>
+        <a href="index.html">Back to Home</a>
+    </header>
+
+    <section id="science-lesson">
+        <h2>Lesson 1: Physics - Laws of Motion</h2>
+        <p>Physics is the study of the physical world around us. Let's begin with the fundamental laws of motion.</p>
+
+        <button onclick="showPhysics()">Start Physics Lesson</button>
+        <div id="physicsContent" style="display:none;">
+            <p>Learn about Newton's Three Laws of Motion...</p>
+        </div>
+    </section>
+
+    <script>
+        function showPhysics() {
+            document.getElementById('physicsContent').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
