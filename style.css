@@ -209,9 +209,9 @@ footer a:hover {
 .relative-container {
     position: relative; /* Sets the parent as the reference point for absolute positioning */
 }
-.absolute-right {
+.absolute-left {
     position: absolute;
-    right: 0; /* Places the image at the right edge of the container */
+    left: 0; /* Places the image at the right edge of the container */
     top: 0; /* Aligns the image to the top of the container */
     max-width: 50%; /* Optional: adjust the size of the image */
     height: auto;
