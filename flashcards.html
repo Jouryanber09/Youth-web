@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Flashcards</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Math Flashcards</h1>
+            <p>Test your math skills with flashcards!</p>
+        </div>
+    </header>
+
+    <section class="flashcards">
+        <div class="container">
+            <div id="flashcard">
+                <h2 id="flashcardQuestion">What is 8 + 5?</h2>
+                <button onclick="showAnswer()">Show Answer</button>
+                <p id="flashcardAnswer" style="display:none;">13</p>
+                <button onclick="nextFlashcard()">Next Flashcard</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <a href="index.html">Back to Home</a>
+        </div>
+    </footer>
+
+    <script>
+        const flashcards = [
+            { question: "What is 8 + 5?", answer: "13" },
+            { question: "What is 12 - 7?", answer: "5" },
+            { question: "What is 6 x 3?", answer: "18" }
+        ];
+
+        let flashcardIndex = 0;
+
+        function showAnswer() {
+            document.getElementById('flashcardAnswer').style.display = 'block';
+        }
+
+        function nextFlashcard() {
+            flashcardIndex++;
+            if (flashcardIndex < flashcards.length) {
+                document.getElementById('flashcardQuestion').textContent = flashcards[flashcardIndex].question;
+                document.getElementById('flashcardAnswer').style.display = 'none';
+            } else {
+                document.getElementById('flashcard').innerHTML = "<h2>You've completed all flashcards!</h2><button onclick='resetFlashcards()'>Start Over</button>";
+            }
+        }
+
+        function resetFlashcards() {
+            flashcardIndex = 0;
+            nextFlashcard();
+        }
+    </script>
+</body>
+</html>

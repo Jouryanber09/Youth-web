@@ -16,13 +16,18 @@
 
     <section class="lesson">
         <div class="container">
-            <h2>Lesson 1: Basic Arithmetic</h2>
-            <p>Let's start with basic addition and subtraction. Understand how numbers interact!</p>
-
-            <h3>Quiz: What is 8 + 5?</h3>
-            <input type="number" id="mathAnswer" placeholder="Your Answer">
-            <button onclick="checkMathAnswer()">Submit Answer</button>
-            <p id="mathResult"></p>
+            <div id="questionCard">
+                <h2>Level 1: Basic Arithmetic</h2>
+                <p id="question">What is 8 + 5?</p>
+                <input type="number" id="answer" placeholder="Your Answer">
+                <button onclick="checkAnswer()">Submit Answer</button>
+                <p id="feedback"></p>
+            </div>
+            <div id="explanation" style="display:none;">
+                <h3>Explanation:</h3>
+                <p id="explanationText"></p>
+                <button onclick="nextQuestion()">Next Question</button>
+            </div>
         </div>
     </section>
 
@@ -33,17 +38,61 @@
     </footer>
 
     <script>
-        function checkMathAnswer() {
-            const answer = document.getElementById('mathAnswer').value;
-            const result = document.getElementById('mathResult');
-            
-            if (parseInt(answer) === 13) {
-                result.textContent = 'Correct! 8 + 5 = 13';
-                result.style.color = 'green';
-            } else {
-                result.textContent = 'Oops! Try again.';
-                result.style.color = 'red';
+        let level = 1;  // Current level of difficulty
+        let questionIndex = 0;  // To keep track of which question we're on
+        const questions = [
+            {
+                question: "What is 8 + 5?",
+                correctAnswer: 13,
+                explanation: "8 + 5 equals 13. Addition is combining two numbers to get a total."
+            },
+            {
+                question: "What is 12 - 7?",
+                correctAnswer: 5,
+                explanation: "12 - 7 equals 5. Subtraction is taking away a number from another."
+            },
+            {
+                question: "What is 6 x 3?",
+                correctAnswer: 18,
+                explanation: "6 x 3 equals 18. Multiplication is repeated addition."
             }
+        ];
+
+        // Function to check answer
+        function checkAnswer() {
+            const userAnswer = parseInt(document.getElementById('answer').value);
+            const feedback = document.getElementById('feedback');
+            
+            if (userAnswer === questions[questionIndex].correctAnswer) {
+                feedback.textContent = 'Correct! Well done!';
+                feedback.style.color = 'green';
+                document.getElementById('explanationText').textContent = questions[questionIndex].explanation;
+                document.getElementById('questionCard').style.display = 'none';
+                document.getElementById('explanation').style.display = 'block';
+            } else {
+                feedback.textContent = 'Incorrect. Try again!';
+                feedback.style.color = 'red';
+            }
+        }
+
+        // Function to load the next question
+        function nextQuestion() {
+            questionIndex++;
+            if (questionIndex < questions.length) {
+                document.getElementById('question').textContent = questions[questionIndex].question;
+                document.getElementById('answer').value = '';
+                document.getElementById('questionCard').style.display = 'block';
+                document.getElementById('explanation').style.display = 'none';
+                document.getElementById('feedback').textContent = '';
+            } else {
+                document.getElementById('questionCard').innerHTML = "<h2>Congratulations! You've completed the quiz.</h2><button onclick='resetQuiz()'>Try Again</button>";
+            }
+        }
+
+        // Function to reset the quiz
+        function resetQuiz() {
+            questionIndex = 0;
+            nextQuestion();
         }
     </script>
 </body>
