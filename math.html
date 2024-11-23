@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathematics Lessons</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Mathematics: Explore the Planet of Numbers and Equations</h1>
+        <p>Welcome to the Mathematics section! Here you can explore a variety of lessons and quizzes.</p>
+        <a href="index.html">Back to Home</a>
+    </header>
+
+    <section id="math-lesson">
+        <h2>Lesson 1: Basic Arithmetic</h2>
+        <p>Let's start with basic operations like addition, subtraction, multiplication, and division.</p>
+
+        <button onclick="startMathQuiz()">Start Math Quiz</button>
+        <div id="mathQuiz" style="display:none;">
+            <p>What is 5 + 3?</p>
+            <input type="number" id="mathAnswer">
+            <button onclick="checkMathAnswer()">Submit</button>
+            <p id="mathResult"></p>
+        </div>
+    </section>
+
+    <script>
+        function startMathQuiz() {
+            document.getElementById('mathQuiz').style.display = 'block';
+        }
+
+        function checkMathAnswer() {
+            const answer = document.getElementById('mathAnswer').value;
+            if (answer == 8) {
+                document.getElementById('mathResult').textContent = 'Correct! 5 + 3 = 8';
+            } else {
+                document.getElementById('mathResult').textContent = 'Oops, try again!';
+            }
+        }
+    </script>
+</body>
+</html>
