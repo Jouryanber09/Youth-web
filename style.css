@@ -216,15 +216,3 @@ footer a:hover {
     max-width: 50%; /* Optional: adjust the size of the image */
     height: auto;
 }
-
-
-.text-overlay {
-    position: absolute; /* Places text on top of the image */
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Adjusts for the text's size */
-    color: black; /* Sets text color */
-    font-size: 1.5rem; /* Adjust as needed */
-    font-weight: bold; /* Makes text bold */
-    text-align: center; /* Optional: centers multiline text */
-}
