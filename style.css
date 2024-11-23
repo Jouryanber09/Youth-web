@@ -7,7 +7,7 @@ body {
 }
 
 header {
-    background: #4CAF50;
+    background: color:red;
     color: #fff;
     padding: 1rem 0;
     text-align: center;
@@ -24,7 +24,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #fff;
+    color: Pink;
     text-decoration: none;
 }
 
