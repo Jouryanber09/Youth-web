@@ -217,17 +217,6 @@ footer a:hover {
     height: auto;
 }
 
-.image-container {
-    position: relative; /* Sets the container as the reference for positioning */
-    width: 100%; /* Optional: adjust width */
-    max-width: 600px; /* Optional: set a maximum width for the image */
-}
-
-.image-container img {
-    display: block; /* Ensures no extra space below the image */
-    width: 100%; /* Makes the image responsive */
-    height: auto; /* Maintains aspect ratio */
-}
 
 .text-overlay {
     position: absolute; /* Places text on top of the image */
